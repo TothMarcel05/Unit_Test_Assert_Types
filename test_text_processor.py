@@ -36,22 +36,38 @@ def test_count_words_isinstance():
     processor = TextProcessor()
     result = processor.count_words("This is a test")
     assert isinstance(result, int)
-    assert isinstance(result, int)
+    assert not isinstance(result, str)
+    assert isinstance(result, int) and result == 4
 
 def test_count_words_greater_less():
     """6. Assert >, <, >=, <= - összehasonlítás"""
-    pass
+    processor = TextProcessor()
+    result1 = processor.count_words("One")
+    result2 = processor.count_words("One two")
+    result3 = processor.count_words("One two three")
+
+    assert result1 < result2
+    assert result3 > result2
+    assert result2 >= result1
 
 
 def test_count_words_empty_string():
     """7. Üres sztring bemenet ellenőrzése"""
-    pass
+    processor = TextProcessor()
+    result = processor.count_words("")
+    assert result == 0
+    assert result is not None
 
 
 def test_is_palindrome_true_false():
     """8. Assert True/False - boolean ellenőrzés"""
-    pass
-
+    processor = TextProcessor()
+    result_true = processor.is_palindrome("Anna")
+    assert result_true is True
+    assert processor.is_palindrome("Hello") is False
+    assert processor.is_palindrome("") is False
+    assert processor.is_palindrome("Indul a görög aludni") is True
+    
 
 def test_remove_spaces_multiple_asserts():
     """9. Több assert egy tesztben"""
