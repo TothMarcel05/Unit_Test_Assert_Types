@@ -45,3 +45,5 @@ def test_is_palindrome_true_false():
 def test_remove_spaces_multiple_asserts():
     """9. Több assert egy tesztben"""
     pass
+
+#
