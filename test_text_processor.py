@@ -67,10 +67,16 @@ def test_is_palindrome_true_false():
     assert processor.is_palindrome("Hello") is False
     assert processor.is_palindrome("") is False
     assert processor.is_palindrome("Indul a görög aludni") is True
-    
+
 
 def test_remove_spaces_multiple_asserts():
     """9. Több assert egy tesztben"""
-    pass
-
+    processor = TextProcessor()
+    result = processor.remove_spaces("Hello World")
+    result2 = processor.remove_spaces(" H e l l o  ")
+    result3 = processor.remove_spaces("d l   r o w   o ll e      h   ")
+    result4 = processor.reverse_text(result3)
+    assert result == "HelloWorld"
+    assert len(result2) == 5
+    assert result4 == "helloworld"
 #
